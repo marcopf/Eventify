@@ -1,0 +1,280 @@
+.bigContainer
+{
+    width: 90svw;
+    height: 89svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container
+{
+    width: 90svw;
+    height: 89svh;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.createContainer, .modRemContainer
+{
+    width: 48%;
+    height: 95%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1svw;
+    border-radius: 15px;
+    border: 3px solid var(--bg-col);
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    box-sizing: border-box;
+    height: 10%;
+    width: 100%;
+    background-color: var(--bg-col);
+    color: white;
+    border-radius: 10px;
+    border: 3px solid var(--bg-col);
+}
+
+.createBox
+{
+    width: 90%;
+    height: 70%;
+    box-sizing: border-box;
+    padding: 1svw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.inputWrap
+{
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-col);
+    width: 95%;
+    height: 22%;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 1svw;
+    border-radius: 10px;
+    margin-top: 1svw;
+    margin-bottom: 1svw;
+    transition: 0.5s;
+}
+
+.wrapFadeOut
+{
+    opacity: 0;
+}
+
+.inputWrap input
+{
+    width: 80%;
+    height: 80%;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 700;
+    background-color: white;
+    color: var(--det-col);
+}
+
+::placeholder
+{
+    font-family: FontAwesome;
+    color: var(--det-col);
+}
+
+.delete
+{
+    color: var(--err-col);
+    font-size: xx-large;
+}
+
+.buttonsContainer
+{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.add
+{
+    width: 10%;
+    height: 90%;
+    background-color: var(--bg-col);
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: 0.6s;
+}
+
+.add:hover
+{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: white;
+    color: var(--bg-col);
+    border: 3px solid var(--bg-col);
+}
+
+.buttonsContainer button
+{
+    width: 40%;
+    height: 90%;
+    background-color: white;
+    color: var(--bg-col);
+    border: 3px solid var(--bg-col);
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: larger;
+    transition: 0.6s;
+}
+
+.buttonsContainer button:hover
+{
+    transform: scale(1.05);
+    background-color: var(--bg-col);
+    color: white;
+    cursor: pointer;
+}
+
+.modRemBox
+{
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+    padding: 1svw;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.myForm input
+{
+    width: 60%;
+    height: 90%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: larger;
+    font-weight: 800;
+    color: var(--det-col);
+}
+
+.myForm
+{
+    width: 90%;
+    height: 12%;
+    background-color: var(--bg-col);
+    margin-top: 1svw;
+    margin-bottom: 1svw;
+    display: flex;
+    border-radius: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.7svw;
+    justify-content: space-around;
+}
+
+.pencil
+{
+    width: 10%;
+    height: 90%;
+    background-color: var(--det-col);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    transition: 0.7s;
+}
+
+.trash
+{
+    width: 10%;
+    height: 90%;
+    background-color: var(--err-col);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+}
+
+@media screen and (max-width: 1000px) {
+    .bigContainer
+    {
+        width: 100svw;
+        height: 79svh;
+    }
+    .container
+    {
+        align-self: flex-start;
+        width: 100svw;
+        height: 89svh;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: scroll;
+    }
+    .createContainer
+    {
+        width: 98svw;
+        min-height: 80svh;
+        margin-top: 1svh;
+        margin-bottom: 1svh;
+    }
+    .buttonsContainer i
+    {
+        width: 20%;
+    }
+    .modRemBox
+    {
+        padding: 0;
+    }
+    .modRemContainer
+    {
+        width: 98svw;
+        min-height: 80svh;
+        margin-top: 1svh;
+        margin-bottom: 1svh;
+    }
+    .myForm
+    {
+        width: 100%;
+        height: 10svh;
+    }
+
+    .myForm input
+    {
+        height: 65%;
+    }
+    .myForm i
+    {
+        height: 80%;
+        width: 15%;
+    }
+}

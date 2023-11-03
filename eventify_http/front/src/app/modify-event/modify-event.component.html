@@ -1,0 +1,21 @@
+<div class="container">
+    <app-loader  *ngIf="this.isLoading"></app-loader>
+    <form *ngIf="!this.isLoading" action="" id="myForm" (ngSubmit)="this.modifyCurrentEvent()" [ngStyle]="{border: this.newEvent.dataErr ? '4px solid #D7431D' : '2px solid var(--bg-col)', color: this.newEvent.dataErr ? '#D7431D' : '#264653'}">
+        <div class="mainCard">
+            <div class="left">
+                <div class="element"><h1 class="underline">{{this.gFunc.label.card.title}}&nbsp;</h1><input type="text" name="title" value="{{this.event? this.event.title : ''}}"></div>
+                <div class="element tagsContainer"><h1 class="underSearch">{{this.gFunc.label.card.categories}}&nbsp;<div class="searchContainer"><input placeholder="&#xf002;&nbsp;" type="text" (keyup)="searchFunc($event)"></div></h1> <app-small-loader *ngIf="!this.isLoaded"></app-small-loader> <div *ngIf="this.isLoaded" class="tags"><div *ngFor="let tag of this.tags.categories" class="tag"><span (click)="addTag($event)" *ngIf="this.input == tag.substring(0, this.input.length)" [ngClass]="{'pressed': filterTags(tag), 'not-pressed' : !filterTags(tag)}">{{tag}}</span></div></div></div>
+                <!-- <div class="element"><h1 class="underline">{{this.gFunc.label.card.gMaps}}&nbsp;</h1><input type="text" id="" name="mapsUrl" value="{{this.event ? this.event.mapsUrl : ''}}"></div> -->
+            </div>
+            <div class="right">
+                <div class="element"><h1 class="underline">{{this.gFunc.label.card.location}}&nbsp;</h1><input type="text" id="" name="place" value="{{this.event ? this.event.place : ''}}"></div>
+                <div class="element start"><h1 class="underline">{{this.gFunc.label.card.date}}&nbsp;</h1><div class="timeAndHour"><input id="date" type="date" value="{{splitTime('date')}}" name="eventDate"><input id="time" type="time" value="{{splitTime('time')}}" name="time"></div></div>
+                <div class="element"><h1 class="underline files" [ngStyle]="{color: this.newEvent.imageErr ? '#D7431D' : 'white'}">{{this.gFunc.label.card.picture}}&nbsp;</h1><label for="photos" class="fileLabel"><span class="fileText">Select Photos&nbsp;<i class="fa-solid fa-file"></i></span></label><input (change)="this.changeText()" accept=".jpg, .png, .jpeg, .HEIC" id="photos" type="file" multiple></div>
+            </div>
+        </div>
+        <div class="options">
+            <div class="element"><h1 class="underline">{{this.gFunc.label.card.description}}&nbsp;</h1><textarea id="" cols="30" rows="10" name="description"value="{{this.event ? this.event.description : ''}}"></textarea></div>
+            <button type="submit">{{this.gFunc.label.card.submit}}</button>
+        </div>
+    </form>
+</div>

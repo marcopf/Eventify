@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Main-Class: com.roma42.eventifyBack.eventifyBackApplication
+Class-Path: jakarta.transaction-api-2.0.1.jar tomcat-embed-el-10.1.13.ja
+ r spring-security-oauth2-resource-server-6.1.4.jar jackson-databind-2.1
+ 5.2.jar jakarta.xml.bind-api-4.0.1.jar micrometer-commons-1.11.4.jar ja
+ ckson-core-2.15.2.jar angus-activation-2.0.1.jar spring-security-core-6
+ .1.4.jar antlr4-runtime-4.10.1.jar log4j-api-2.20.0.jar jakarta.persist
+ ence-api-3.1.0.jar spring-context-6.0.12.jar spring-messaging-6.0.12.ja
+ r spring-context-support-6.0.12.jar spring-data-jpa-3.1.4.jar spring-da
+ ta-commons-3.1.4.jar jackson-datatype-jsr310-2.15.2.jar jackson-module-
+ parameter-names-2.15.2.jar mysql-connector-j-8.0.33.jar error_prone_ann
+ otations-2.21.1.jar jakarta.validation-api-3.0.2.jar aspectjweaver-1.9.
+ 20.jar hibernate-validator-8.0.1.Final.jar spring-jdbc-6.0.12.jar tika-
+ core-2.9.0.jar jboss-logging-3.5.3.Final.jar jul-to-slf4j-2.0.9.jar spr
+ ing-core-6.0.12.jar snakeyaml-1.33.jar byte-buddy-1.14.8.jar caffeine-3
+ .1.8.jar logback-classic-1.4.11.jar jaxb-runtime-4.0.3.jar logback-core
+ -1.4.11.jar classmate-1.5.1.jar spring-boot-starter-logging-3.1.4.jar j
+ ackson-datatype-jdk8-2.15.2.jar spring-web-6.0.12.jar jakarta.mail-1.1.
+ 0.jar spring-boot-starter-data-jpa-3.1.4.jar spring-boot-3.1.4.jar micr
+ ometer-observation-1.11.4.jar spring-boot-starter-validation-3.1.4.jar 
+ txw2-4.0.3.jar spring-boot-starter-security-3.1.4.jar spring-security-o
+ auth2-authorization-server-1.1.2.jar istack-commons-runtime-4.1.2.jar s
+ pring-security-config-6.1.4.jar lombok-1.18.30.jar spring-tx-6.0.12.jar
+  spring-security-oauth2-jose-6.1.2.jar spring-security-oauth2-core-6.1.
+ 4.jar spring-boot-starter-tomcat-3.1.4.jar spring-boot-starter-json-3.1
+ .4.jar spring-aspects-6.0.12.jar hibernate-core-6.2.9.Final.jar spring-
+ beans-6.0.12.jar jaxb-core-4.0.3.jar jakarta.activation-api-2.1.2.jar t
+ omcat-embed-websocket-10.1.13.jar spring-jcl-6.0.12.jar HikariCP-5.0.1.
+ jar commons-io-2.13.0.jar spring-boot-starter-3.1.4.jar spring-websocke
+ t-6.0.12.jar spring-boot-starter-jdbc-3.1.4.jar spring-webmvc-6.0.12.ja
+ r spring-expression-6.0.12.jar hibernate-commons-annotations-6.0.6.Fina
+ l.jar jandex-3.0.5.jar spring-boot-starter-mail-3.1.4.jar checker-qual-
+ 3.37.0.jar spring-boot-starter-web-3.1.4.jar spring-boot-autoconfigure-
+ 3.1.4.jar jackson-annotations-2.15.2.jar jakarta.inject-api-2.0.1.jar l
+ og4j-to-slf4j-2.20.0.jar spring-aop-6.0.12.jar slf4j-api-2.0.9.jar jcip
+ -annotations-1.0-1.jar spring-security-crypto-6.1.4.jar spring-boot-sta
+ rter-aop-3.1.4.jar spring-security-web-6.1.4.jar spring-orm-6.0.12.jar 
+ jakarta.annotation-api-2.1.1.jar tomcat-embed-core-10.1.13.jar nimbus-j
+ ose-jwt-9.30.2.jar
+

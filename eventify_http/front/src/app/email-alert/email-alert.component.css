@@ -1,0 +1,63 @@
+.container
+{
+    display: flex;
+    width: 100svw;
+    height: 89svh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.infoBox
+{
+    display: flex;
+    width: 60%;
+    height: 40%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--err-col), var(--det-col));
+    box-sizing: border-box;
+    padding: 2svw;
+    border-radius: 15px;
+}
+
+h1
+{
+    width: fit-content;
+    text-align: justify;
+}
+
+.buttonContainer
+{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+button
+{
+    width: 40%;
+    height: 90%;
+    font-weight: 700;
+    font-size: larger;
+    color: white;
+    border-radius: 8px;
+    background: linear-gradient(to right, var(--bg-col), var(--text-col));
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover
+{
+    box-shadow: none;
+}

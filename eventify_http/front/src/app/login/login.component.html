@@ -1,0 +1,20 @@
+<div class="container">
+    <form #myForm method="POST" id="loginForm" action="/login" (ngSubmit)="login_group.loginSubmit($event)" [ngStyle]="{border: login_group.loginError ? '5px solid var(--darkErr-col)' : 'unset'}">
+        <h1 id="header" [ngStyle]="{color: login_group.loginError ? 'var(--darkErr-col)' : 'transparent'}">Login</h1>
+        <div class="inp_row">
+            <label for="username">{{this.gFunc.label.signin.username}}:</label>
+            <input placeholder="&#xf2c2; {{this.gFunc.label.signin.username}}" style="font-family: Arial, FontAwesome" id="username" type="text" name="username" autocomplete="additional-name" [(ngModel)]="login_group.login.username">
+        </div>
+        <div class="inp_row">
+            <label for="password">{{this.gFunc.label.signin.password}}:</label>
+            <div class="passwordCont">
+                <input placeholder="&#xf084; {{this.gFunc.label.signin.password}}" style="font-family: Arial, FontAwesome" id="password" type="password" name="password" [(ngModel)]="login_group.login.password"><i (click)="togglePasswordVisibility()" *ngIf="this.passWordIsVisible" class="eye fa-solid fa-eye-slash"></i><i *ngIf="!passWordIsVisible" (click)="togglePasswordVisibility()" class="eye fa-solid fa-eye"></i>
+            </div>
+        </div>
+        <div class="row">
+            <a [routerLink]="['']"><i class="fa-solid fa-house"></i> <span *ngIf="width > 800">&nbsp;{{this.gFunc.label.signin.home}}</span></a>
+            <a [routerLink]="['/signin']"><i class="fa-solid fa-clipboard-list"></i><span *ngIf="width > 800">&nbsp;{{this.gFunc.label.signin.register}}</span></a>
+            <button type="submit" class="login"><span *ngIf="width > 800">{{this.gFunc.label.signin.login}}</span>&nbsp;<i class="fa fa-solid fa-arrow-right"></i></button>
+        </div>
+    </form>
+</div>

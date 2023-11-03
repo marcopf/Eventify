@@ -1,0 +1,55 @@
+<div class="bigContainer">
+    <app-loader *ngIf="!this.isLoaded"></app-loader>
+    <div *ngIf="this.isLoaded" class="container">
+        <div class="openLeft" (click)="openInfo()">
+            <span class="arr">Info&nbsp;<i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+        <div class="openRight" (click)="openPassword()">
+            <span class="arr">Pass&nbsp;<i class="fa-solid fa-arrow-left"></i></span>
+        </div>
+        <div class="options">
+                <form class="img" id="pictureForm">
+                    <img [src]="imageUrl[0]" alt="">
+                    <label for="pict"><i class="fa-solid fa-camera"></i></label>
+                    <input id="pict" type="file" accept=".png, .jpeg, .jpg, .HEIC" (change)="submitPhoto()">
+                </form>
+                <div class="element"><h1 class="underline">{{this.gFunc.label.userInfo.username}}&nbsp;</h1><input type="text" class="centered" value="{{userInfo.username}}" readonly></div>
+                <button *ngIf="this.toggleInfo" (click)="submitInfo()">{{this.gFunc.label.userInfo.submitInfo}}</button>
+                <button *ngIf="this.togglePass" (click)="submitPassword()">{{this.gFunc.label.userInfo.submitPassword}}</button>
+        </div>
+        <form action="" id="infoForm">
+                <div class="left">
+                    <div class="element">
+                        <h1 class="underline">{{this.gFunc.label.userInfo.firstName}}&nbsp;
+                            <span *ngIf="this.errors.firstNameErr" style="font-size: x-small; color: var(--err-col);">{{this.gFunc.label.userInfo.errors[5]}}</span>
+                        </h1><input type="text" name="firstName" value="{{userInfo.firstName}}" [(ngModel)]="this.userInfo.firstName">
+                    </div>
+                    <div class="element">
+                        <h1 class="underline">{{this.gFunc.label.userInfo.lastName}}&nbsp;
+                            <span *ngIf="this.errors.lastNameErr" style="font-size: x-small; color: var(--err-col);">{{this.gFunc.label.userInfo.errors[5]}}</span>
+                        </h1><input type="text" id="" name="lastName" value="{{userInfo.lastName}}" [(ngModel)]="this.userInfo.lastName">
+                    </div>
+                    <div class="element">
+                        <h1 class="underline">{{this.gFunc.label.userInfo.email}}&nbsp;<span *ngIf="this.errors.emailErr" style="font-size: x-small; color: var(--err-col);">{{this.gFunc.label.userInfo.errors[6]}}
+                        </span></h1><input type="text" id="" name="email" value="{{userInfo.email}}">
+                    </div>
+                    <button class="onlyMobile" (click)="submitInfo()">{{this.gFunc.label.userInfo.submitInfo}}</button>
+                </div>
+        </form>
+        <form class="right" id="passwordForm">
+            <div class="element"><h1 class="underline">{{this.gFunc.label.userInfo.oldPassword}}&nbsp;</h1><input id="password" type="password" name="password"></div>
+            <div class="element"><h1 class="underline">{{this.gFunc.label.userInfo.password}}&nbsp;</h1><input id="password" type="password" name="newPassword"></div>
+            <div class="element"><h1 class="underline">{{this.gFunc.label.userInfo.confirmPassword}}&nbsp;</h1><input id="rpassword" type="password" name="rNewPassword"></div>
+            <button class="onlyMobile" (click)="submitPassword()">{{this.gFunc.label.userInfo.submitPassword}}</button>
+            <div class="errors" *ngIf="this.errors.passErr">
+                <h4>{{this.gFunc.label.userInfo.errors[0]}}</h4>
+                <ul>
+                    <li>{{this.gFunc.label.userInfo.errors[1]}}</li>
+                    <li>{{this.gFunc.label.userInfo.errors[2]}}</li>
+                    <li>{{this.gFunc.label.userInfo.errors[3]}}</li>
+                    <li>{{this.gFunc.label.userInfo.errors[4]}}</li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>

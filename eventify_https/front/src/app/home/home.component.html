@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="wallpaper">
+        <div class="left">
+            <h1>{{this.gFunc.label.home.welcomeMessage[0]}}</h1>
+            <h1>{{this.gFunc.label.home.welcomeMessage[1]}}</h1>
+            <h1>{{this.gFunc.label.home.welcomeMessage[2]}}</h1>
+        </div>
+        <div class="right">
+            <div class="linksContainer">
+                <a *ngIf="!this.gFunc.isLogged()" [routerLink]="['/signin']">
+                    {{this.gFunc.label.home.signup}}
+                </a>
+                <a *ngIf="!this.gFunc.isLogged()" [routerLink]="['/login']">
+                    {{this.gFunc.label.home.signin}}
+                </a>
+                <a [routerLink]="['/events']">
+                    {{this.gFunc.label.home.events}}
+                </a>
+            </div>
+            <!-- <h2 (click)="goEvents()">Check Our Events&nbsp;<i class="fa-solid fa-arrow-right"></i></h2> -->
+        </div>
+    </div>
+</div>

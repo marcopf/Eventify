@@ -1,0 +1,20 @@
+<div class="container">
+    <form action="" id="myForm" (ngSubmit)="this.submit()" [ngStyle]="{border: this.newEvent.dataErr ? '4px solid #D7431D' : '2px solid var(--bg-col)', color: this.newEvent.dataErr ? '#D7431D' : '#264653'}">
+        <div class="mainCard">
+            <div class="left">
+                <div class="element"><h1 class="underline">{{this.gFunc.label.card.title}}&nbsp;</h1><input type="text" [(ngModel)]="this.newEvent.newEvent.title" name="title"></div>
+                <div class="element categories"><h1 class="underSearch">{{this.gFunc.label.card.categories}}&nbsp;<div class="searchContainer"><input placeholder="&#xf002;&nbsp;" type="text" (keyup)="searchFunc($event)"></div></h1> <app-small-loader *ngIf="!this.isLoaded"></app-small-loader> <div *ngIf="this.isLoaded" class="tags"><div (click)="addTag($event)" *ngFor="let tag of this.tags.categories" class="tag"><span *ngIf="this.input == tag.substring(0, this.input.length)" class="not-pressed">{{tag}}</span></div></div></div>
+                <!-- <div class="element"><h1 class="underline">{{this.gFunc.label.card.gMaps}}&nbsp;</h1><input type="text" id=""[(ngModel)]="this.newEvent.newEvent.postition" name="mapsUrl"></div> -->
+            </div>
+            <div class="right">
+                <div class="element"><h1 class="underline">{{this.gFunc.label.card.location}}&nbsp;</h1><input type="text" id="" [(ngModel)]="this.newEvent.newEvent.place" name="place"></div>
+                <div class="element start"><h1 class="underline">{{this.gFunc.label.card.date}}&nbsp;</h1><div class="timeAndHour"><input id="date" type="date" value="2023-10-31" [(ngModel)]="this.newEvent.newEvent.date" name="eventDate"><input id="time" type="time" name="time" [(ngModel)]="this.newEvent.newEvent.time"></div></div>
+                <div class="element"><h1 class="underline files" [ngStyle]="{color: this.newEvent.imageErr ? '#D7431D' : 'white'}">{{this.gFunc.label.card.picture}}&nbsp;</h1><label for="photos" class="fileLabel"><span class="fileText">Select Photos&nbsp;<i class="fa-solid fa-file"></i></span></label><input (change)="this.changeText()" accept=".jpg, .png, .jpeg, .HEIC" id="photos" type="file" multiple></div>
+            </div>
+        </div>
+        <div class="options">
+            <div class="element"><h1 class="underline">{{this.gFunc.label.card.description}}&nbsp;</h1><textarea id="" cols="30" rows="10" [(ngModel)]="this.newEvent.newEvent.description" name="description"></textarea></div>
+            <button type="submit">{{this.gFunc.label.card.submit}}</button>
+        </div>
+    </form>
+</div>

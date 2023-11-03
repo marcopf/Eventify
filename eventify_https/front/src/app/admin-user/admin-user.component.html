@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="mainCard">
+        <div class="sideBar">
+            <i [ngStyle]="{backgroundColor: this.itemMarked.users ? 'var(--det-col)' : 'transparent', color: this.itemMarked.users ? 'var(--bg-col)' : 'white'}" class="fa-solid fa-users"></i>
+            <i [ngStyle]="{backgroundColor: this.itemMarked.eventRemove ? 'var(--det-col)' : 'transparent', color: this.itemMarked.eventRemove ? 'var(--bg-col)' : 'white'}" class="fa-solid fa-calendar-xmark"></i>
+            <i [ngStyle]="{backgroundColor: this.itemMarked.tag ? 'var(--det-col)' : 'transparent', color: this.itemMarked.tag ? 'var(--bg-col)' : 'white'}" class="fa-solid fa-tags"></i>
+        </div>
+        <div class="bigContainer">
+            <app-loader *ngIf="!this.users.isLoaded"></app-loader>
+            <div *ngIf="this.itemMarked.users && this.users.isLoaded" class="userContainer">
+                <div *ngFor="let user of this.users.users; let i = index">
+                    <ng-container>
+                        <div class="user" [ngStyle]="{backgroundColor: user.verified? 'var(--ok-col)' : 'var(--err-col)'}">
+                            <div class="profilePict">
+                                <img [src]="this.users.imagesUrls[i]" alt="">
+                            </div>
+                            <div class="info">
+                                <div *ngIf="!(user.username == this.gFunc.getUserName() && this.gFunc.isAdmin())" class="slider">
+                                    <h4>{{user.username}}</h4>
+                                    <button *ngIf="!user.blocked" (click)="api.blockUser(user.username)" class="yellow">Block&nbsp;<i class="fa-solid fa-hourglass-start"></i></button>
+                                    <button *ngIf="user.blocked" (click)="api.unblockUser(user.username)" class="green">Unblock&nbsp;<i class="fa-solid fa-play"></i></button>
+                                    <button (click)="this.api.deleteUser(user.username)" class="red">Delete&nbsp;<i class="fa-solid fa-trash"></i></button>
+                                </div>
+                                <div *ngIf="user.blocked" class="blockHover">
+                                    <i class="fa-solid fa-lock"></i>
+                                    <h2>{{user.username}}<br>{{this.gFunc.label.adminUser.currBlock}}</h2>
+                                </div>
+                                <h1>{{user.username}}</h1>
+                                <div>
+                                    <span>{{this.gFunc.label.adminUser.subEvent}}:&nbsp;{{user.subscribedEvents}}</span><br> 
+                                    <span>{{this.gFunc.label.adminUser.createdEvents}}:&nbsp;{{user.createdEvents}}</span> 
+                                </div>  
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <app-admin-tag-panel *ngIf="this.itemMarked.tag"></app-admin-tag-panel>
+        <app-event-display *ngIf="this.itemMarked.eventRemove"></app-event-display>
+    </div>
+</div>

@@ -1,0 +1,457 @@
+/* .card
+{
+    width: 30svw;
+    position: relative;
+    height: 60svh;
+    background-color: white;
+    display: flex;
+    margin: 1svw;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+} */
+
+
+/* 
+
+.highlight
+{
+    font-size: x-large;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--det-col);
+}
+
+.image
+{
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 50%;
+}
+
+.image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tit
+{
+    width: 100%;
+}
+
+.tit h1
+{
+
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 1svw;
+    background: linear-gradient(to right,  var(--err-col), var(--det-col));
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+    z-index: 13;
+}
+
+.tit::before
+{
+    content: "";
+    position: absolute;
+    top: -5svw;
+    left: -8svw;
+    width: 130%;
+    height: 250%;
+    border-radius: 150px;
+    z-index: 12;
+    background: linear-gradient(var(--bg-col), var(--text-col), var(--ok-col));
+    transform: rotate(4deg);
+}
+
+.info
+{
+    width: 100%;
+    height: 100%;
+    z-index: 13;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.info *{
+    position: relative;
+}
+
+.infoContainer
+{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: end;
+    z-index: 26;
+    justify-content: space-around;
+    background: linear-gradient(var(--text-col), var(--bg-col));
+}
+
+.infoContainer::before
+{
+    content: "";
+    position: absolute;
+    top: 1svw;
+    left: -3svw;
+    background-color: aqua;
+    width: 90svw;
+    height: 30svh;
+    border-radius: 100px;
+    transform: rotate(7deg);
+    background: linear-gradient(var(--ok-col), var(--text-col), var(--bg-col));
+}
+
+.infoEl
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 42%;
+    height: 90%;
+    flex-direction: column;
+}
+
+p
+{
+    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 0.5svw;
+    justify-content: space-between;
+    font-size:medium;
+    width: 100%;
+    max-height: 100%;
+    font-weight: 400;
+    box-sizing: border-box;
+    padding-right: 4svw;
+    overflow: scroll;
+}
+
+p span
+{
+    background-color:  var(--ok-col);
+    box-sizing: border-box;
+    padding: 0.3svw;
+    border-radius: 5px;
+}
+
+.invisible
+{
+    display: none;
+}
+.card:hover
+{
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+button, a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 7vh;
+    border-radius: 15px;
+    background-color: white;
+    border: 2px solid var(--det-col);
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-underline-position: none;
+    cursor: pointer;
+    transition: 0.4s;
+    color: var(--bg-col);
+}
+
+.admin
+{
+    position: relative;
+}
+
+.deleteEvent
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    background: linear-gradient(transparent, var(--bg-col));
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    transform: translateY(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.deleteEventIcon
+{
+    font-size: 10svw;
+    color: var(--err-col);
+}
+
+.card:hover .deleteEvent
+{
+    transform: translateY(0);
+} */
+
+
+/* @media screen and (max-width: 1000px){
+    .card
+    {
+        width: 90svw !important;
+        height: 50svh;
+        margin-top: 1svh;
+    }
+    .slider
+    {
+        width: 60%;
+    }
+    .info:hover .slider
+    {
+        transform: translateX(0);
+        background-color: white;
+    }
+
+    .infoContainer::before
+    {
+        content: "";
+        position: absolute;
+        top: -5svw;
+        left: -5svw;
+        background-color: aqua;
+        width: 120svw;
+        height: 30svh;
+        border-radius: 100px;
+        transform: rotate(10deg);
+        background: linear-gradient(var(--ok-col), var(--text-col), var(--bg-col));
+    }
+    button
+    {
+        width: 75%;
+        justify-content: center;
+    }
+} */
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    height: 65svh;
+    box-sizing: border-box;
+    padding: 1svw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(var(--ok-col), var(--text-col), var(--bg-col));
+    margin: 1svw;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.fullCard {
+    position: absolute;
+    top: 0;
+    /* Initial position at the top of the container */
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2vw;
+    color: white;
+    backdrop-filter: blur(0);
+    /* Initial state with no blur */
+    transition: left 0.4s ease, backdrop-filter 0.7s ease;
+    /* Transition properties for both top and backdrop-filter */
+}
+
+.card:hover .fullCard {
+    left: 0;
+    /* Final state with top at 100% */
+    backdrop-filter: blur(7px) brightness(80%);
+    /* Final state with blur */
+    transition: left 0.4s ease;
+    /* Transition properties for both top and backdrop-filter */
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+}
+
+.invisible {
+    display: none;
+}
+
+.description {
+    width: 100%;
+    height: 60%;
+    overflow: scroll;
+}
+
+button {
+    width: 100%;
+    height: 15%;
+    border: unset;
+    background-color: var(--text-col);
+    color: white;
+    font-weight: 900;
+    border-radius: 10px;
+    font-size: large;
+    transition: 0.5s;
+    margin: 10px 0 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--ok-col);
+}
+
+.infoContainer {
+    height: 22svh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.infoSmallBlock {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.infoEl {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 1svw;
+    color: white;
+}
+
+.infoEl:nth-child(1) {
+    width: 58%;
+}
+
+.infoEl:nth-child(2) {
+    width: 38%;
+}
+
+.tit {
+    height: 10svh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.tit h1 {
+    margin: 0;
+}
+
+.image {
+    width: 100%;
+    height: 30svh;
+}
+
+.image img {
+    width: 100%;
+    height: 30svh;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.highlight {
+    height: 20%;
+    width: 100%;
+    font-weight: 800;
+}
+
+p {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.del {
+    background-color: var(--err-col);
+}
+
+.del:hover {
+    background-color: var(--darkErr-col);
+}
+
+p span {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 0.3svw;
+    border-radius: 5px;
+    margin: 2px 5px 2px 5px;
+    font-weight: 700;
+    color: var(--text-col);
+}
+
+@media screen and (max-width: 1000px) {
+    .card {
+        width: 90svw !important;
+        height: 60svh;
+        margin-top: 1svh;
+        align-items: center;
+    }
+    .infoContainer {
+        width: 100%;
+        height: 18svh;
+        justify-content: space-around;
+    }
+    .infoEl:nth-child(1) {
+        width: 54%;
+    }
+    .infoEl:nth-child(2) {
+        width: 34%;
+    }
+    .fullCard {
+        padding: 5svw;
+    }
+}

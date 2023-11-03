@@ -1,0 +1,614 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner
+{
+    width: 15svw;
+    height: 15svw;
+    border-radius: 50%;
+    background: conic-gradient(var(--err-col), var(--det-col), var(--ok-col), var(--text-col), var(--bg-col));
+    animation: spin 1s ease infinite;
+    position: relative;
+    border: 4px solid white;
+}
+
+.spinner::before
+{
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.container
+{
+    width: 100svw;
+    min-height: 89svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1svh;
+    background-image: url("/assets/cardDisplay.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bg-col);
+}
+
+.tagsContainer
+{
+    height: 70% !important;
+}
+
+.tags
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: scroll;
+    gap: 0.5svw;box-sizing: border-box;
+    padding: 1svw;
+}
+
+.tag
+{
+    height: fit-content;
+    transition: 0.6s;
+}
+
+.pressed
+{
+    height: 6svh;
+    width: fit-content;
+    color: white;
+    display: flex;
+    padding: 1svw;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: var(--ok-col);
+    box-shadow: #606c38 3px 3px 6px 1px inset;
+}
+
+.not-pressed
+{
+    height: 6svh;
+    width: fit-content;
+    color: white;
+    display: flex;
+    padding: 1svw;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-col);
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+.tag:hover
+{
+    cursor: pointer;
+}
+
+.underSearch
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: unset;
+    color: white;
+    background-color: var(--bg-col);
+    border-radius: 5px;
+    font-size: 26px;
+    padding: 5px;
+    box-sizing: border-box; 
+}
+
+.searchContainer ::placeholder
+{
+    width: 100%;
+    font-family: FontAwesome;
+}
+
+.searchContainer
+{
+    width: 50%;
+    height: 100%;
+}
+
+.timeAndHour
+{
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid var(--det-col);
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.timeAndHour input
+{
+    background-color: white;
+}
+
+#time
+{
+    width: 30% !important;
+    border: unset !important;
+}
+#date
+{
+    width: 50% !important;
+    border: unset !important;
+}
+
+#photos
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+form
+{
+    display: flex;
+    justify-content: center;
+    width: 100svw;
+    backdrop-filter: blur(20px) brightness(90%);
+    border-radius: 15px;
+}
+
+.mainCard
+{
+    width: 70svw;
+    height: 80svh;
+    display: flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 2svh;
+    transition: 0.4s;
+}
+
+.element
+{
+    display: flex;
+}
+
+.elementVal
+{
+    color: var(--err-col);
+}
+
+.underline
+{
+    width: 100%;
+    text-decoration: unset;
+    color: white;
+    background-color: var(--bg-col);
+    border-radius: 5px;
+    font-size: 26px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+span
+{
+    color: var(--err-col);
+    text-decoration: none;
+}
+
+.left
+{
+    width: 60%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right
+{
+    width: 40%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.options
+{
+    width: 30%;
+    height: 80svh;
+    height: 80svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 2svw;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(20px) brightness(90%);
+    transition: 0.4s;
+}
+
+.options .element
+{
+    height: 80%;
+    width: 100%;
+}
+
+textarea
+{
+    width: 100%;
+    height: 80%;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 2px solid var(--det-col);
+    outline: none;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label
+{
+    min-height: 5vh;
+    width: 100%;
+    border: 2px solid var(--det-col);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    overflow: scroll;
+}
+
+button
+{
+    width: 100%;
+    height: 10vh;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid var(--det-col);
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-underline-position: none;
+    cursor: pointer;
+    color: var(--text-col);
+    transition: 0.3s;
+    font-weight: 900;
+    font-size: larger;
+}
+
+button:hover
+{
+    background-color: var(--ok-col);
+    border: 2px solid var(--ok-col);
+    color: white;
+}
+
+.fileText
+{
+    font-weight: 900;
+    font-size: larger;
+}
+
+input
+{
+    height: 5vh;
+    width: 100%;
+    border: 2px solid var(--det-col);
+    font-size: 18px;
+    border-radius: 10px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: 0.5s;
+}
+
+.buttons
+{
+    height: 10svh;
+    width: 30svw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sub, .unsub
+{
+    width: 30%;
+    height: 7vh;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid var(--det-col);
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-underline-position: none;
+    cursor: pointer;
+    color: var(--text-col);
+    transition: 0.3s;
+}
+
+.unsub:hover
+{
+    background-color: var(--err-col);
+    border: 2px solid var(--err-col);
+}
+.sub:hover
+{
+    background-color: #8AB17D;
+    border: 2px solid #8AB17D;
+}
+
+.registeredUser
+{
+    width: 30svw;
+    height: 35svh;
+    border-radius: 20px;
+    background-color: var(--det-col);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--bg-col);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.registeredUser h1
+{
+    text-align: center;
+}
+
+h2
+{
+    margin: 0;
+}
+
+.element
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.userCollection
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.user
+{
+    width: 13svw;
+    height: 10svh;
+    background-color: white;
+    margin: 0.5svw;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.imageSlider
+{
+    width: 30svw;
+    height: 30svh;
+    display: flex;
+    /* overflow: hidden; */
+    background-color: aqua;
+    transition: 0.4s;
+}
+
+.controller
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 30svw;
+    height: 30svh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.goNext
+{
+    width: 4svw;
+    height: 4svw;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--det-col);
+    transition: 0.3s;
+}
+
+.goNext:hover
+{
+    transform: scale(1.25);
+    height: 24svh;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.img
+{
+    width: 30svw;
+    height: 30svh;
+}
+
+.img img
+{
+    width: 30svw;
+    height: 30svh;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+    .container
+    {
+        height: 89svh;
+        width: 100svw;
+        overflow: scroll;
+        align-items: flex-start;
+        box-sizing: border-box;
+        padding: 0;
+    }
+    .mainCard
+    {
+        width: 100svw;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: flex-start;
+        border: none !important;
+        padding: 2svw;
+        box-sizing: border-box;
+        backdrop-filter: unset;
+    }
+    button
+    {
+        width: 80svw;
+    }
+    input, .timeAndHour
+    {
+        width: 100%;
+    }
+    
+    form
+    {
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(20px);
+    }
+    .left
+    {
+        width: 90svw;
+        padding: 0;
+        border: unset ;
+    }
+    .right
+    {
+        width: 90svw;
+        height: fit-content;
+        padding: 0;
+        border: unset;
+    }
+    .element
+    {
+        align-items: center;
+        margin: 1svw;
+    }
+    label
+    {
+        width: 90svw;
+    }
+    .options
+    {
+        backdrop-filter: unset;
+        width: 100svw;
+        border: unset !important;
+        margin-left: 0;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2svw;
+        box-sizing: border-box;
+
+    }
+    textarea
+    {
+        width: 80svw;
+        align-items: unset;
+    }
+
+    .img
+    {
+        width: 95svw;
+        height: 30svh;
+    }
+    
+    .img img
+    {
+        width: 95svw;
+        height: 30svh;
+        object-fit: cover;
+    }
+    .controller
+    {
+        width: 95svw;
+        height: 30svh;
+    }
+    .goNext
+    {
+        width: 10svw;
+        height: 10svw;
+    }
+    .imageSlider
+    {
+        width: 95svw;
+        height: 30svh;
+    }
+    .registeredUser
+    {
+        width: 96svw;
+    }
+    .userCollection
+    {
+        height: unset;
+        min-height: 30svh;
+    }
+    .user
+    {
+        width: 40svw;
+    }
+    .buttons
+    {
+        width: 95svw;
+        height: 20svh;
+        align-items: center;
+    }
+    .start
+    {
+        align-self: start;
+    }
+    .searchContainer input
+    {
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,93 @@
+<div *ngIf="this.isLoading" class="load">
+    <app-loader></app-loader>
+</div>
+<div *ngIf="!this.isLoading" class="container">
+    <!-- <div (click)="openChat()" class="chatHandle">
+        <h2>Chat</h2>
+    </div> -->
+    <!-- <div class="chat">
+        <div class="chatUsers">
+            <div class="chatTitle">
+                <h1>Users</h1>
+            </div>
+            <div class="chatUsersList">
+                <div *ngFor="let user of this.event.participants" class="chatUser">
+                    {{user}}
+                </div>
+            </div>
+        </div>
+        <div class="activeChat">
+            <div class="chatHistory">
+
+            </div>
+            <div class="chatBox">
+                <textarea placeholder="Write Something..." name="chatMsg" id="chatMsg" cols="30" rows="10"></textarea>
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+        </div>
+    </div> -->
+    <div class="mainCard">
+        <div class="left">
+            <div class="element">
+                <h1 class="underline">{{this.event? this.event.title : ""}}</h1>
+                <p>{{this.event != undefined ? this.event.description : ''}}</p>
+            </div>
+            <div class="bottom-left-corner">
+                <div class="bot-left element">
+                    <h1 class="underline">{{this.gFunc.label.card.categories}}&nbsp;</h1>
+                    <div class="elementVal limited tags">
+                        <div *ngFor="let tag of this.event.categories" class="tag">
+                            <span class="not-pressed">{{tag}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bot-right element">
+                    <div class="smalBlock">
+                        <h1 class="underline">{{this.gFunc.label.card.location}}&nbsp;</h1>
+                        <h2 class="elementVal limited">{{this.event? this.event.place : ""}}</h2>
+                    </div>
+                    <div class="smallBlock">
+                        <h1 class="underline">{{this.gFunc.label.card.eventOwner}}&nbsp;</h1>
+                        <h2 class="elementVal limited">{{this.event? this.event.owner : ""}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="element"><h1 class="underline">{{this.gFunc.label.card.date}}&nbsp;</h1><h2 class="elementVal limited">{{replaceTCharInDate()}}</h2></div>
+            <div class="buttons">
+                <button (click)="api.deleteEvent(this.event.id, this.event.title)" class="del" *ngIf="this.gFunc.isAdmin() || this.event.owner == this.gFunc.getUserName()">{{this.gFunc.label.card.delete}}</button>
+                <button (click)="api.subscribeEvent(this.event.id)" class="sub" *ngIf="!this.event.status && !this.gFunc.isAdmin()">{{this.gFunc.label.card.subscribe}}</button>
+                <button (click)="api.unsubscribeEvent(this.event.id)" class="unSub" *ngIf="this.event.status && !this.gFunc.isAdmin() && this.event.owner != this.gFunc.getUserName()">{{this.gFunc.label.card.unsubscribe}}</button>
+                <button class="mod" *ngIf="this.event.owner == this.gFunc.getUserName() || this.gFunc.isAdmin()" (click)="modifyEvent()">{{this.gFunc.label.card.modify}}</button>
+            </div> 
+            <div class="registeredUsers">
+                <h2 class="underline">{{this.gFunc.label.card.registeredUser}}</h2>
+                <div class="userCollection">
+                    <div (click)="showFullName($event, user)" class="user" *ngFor="let user of this.event? this.event.participants : []; let i = index">
+                        <div class="imgContainer">
+                            <img [src]="usersImageArray[i]" alt="">
+                        </div>
+                        <h3>{{user.length > 7 ? user.substring(0, 7) + "..." : user}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="options">
+        <div class="sliderWrap" (click)="nextImage()">
+            <div class="imageSlider">
+                <div *ngFor="let n of imageArray; let i = index" class="img">
+                    <img  [src]="imageArray[i]" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="maps">
+            <div class="gMapsApi" #map style="width:100%;height:100%">
+                <div (click)="initMap()"  class="showMap">
+                    <h3>Show on Google Maps</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

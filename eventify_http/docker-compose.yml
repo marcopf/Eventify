@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  eventify:
+    build: ./Eventify
+    restart: always
+    ports:
+       - 8080:8080
+    depends_on:
+      - mysqldb
+    volumes:
+      - user-vol:/home/eventify/user_images
+      - event-vol:/home/eventify/event_images
+      - log-vol:/home/eventify/log
+    env_file: ./Eventify/.env
+
+  mysqldb:
+    platform: linux/x86_64
+    build: ./mysql
+    command: --default-authentication-plugin=caching_sha2_password
+    restart: always
+    ports:
+      - 3307:3306
+    env_file: ./mysql/.env
+    volumes:
+      - mysql-vol:/var/lib/mysql
+  front:
+    build: ./front/dist/Eventify
+    restart: always
+    ports:
+      - 4200:4200
+    environment:
+      PORT: 4200
+
+volumes:
+  user-vol:
+    external: true
+  event-vol:
+    external: true
+  log-vol:
+    external: true
+  mysql-vol:

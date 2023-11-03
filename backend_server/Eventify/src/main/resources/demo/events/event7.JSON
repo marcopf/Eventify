@@ -1,0 +1,7 @@
+{
+  "title": "Music Concert",
+  "place": "London",
+  "eventDate": "2023-11-25T20:00",
+  "description": "Get ready for a night of electrifying music at the heart of London. World-renowned artists will take the stage.",
+  "categories": ["concert", "music", "entertainment", "event", "live performance"]
+}

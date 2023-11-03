@@ -1,0 +1,6 @@
+FROM node:lts-alpine3.18
+
+WORKDIR .
+COPY . .
+RUN sh dockerInit.sh
+ENTRYPOINT node ./server/index.js

@@ -1,0 +1,57 @@
+<div class="container">
+    <form id="signUp" action="" (ngSubmit)="this.signup.signupSubmit()">
+        <h1 id="header" [ngStyle]="{color: this.signup.signUpError ? 'var(--err-col)' : 'transparent'}">Sign up</h1>
+        <div class="main">
+            <div class="left">
+                <div class="inp_row">
+                    <label for="username">{{this.gFunc.label.signUp.username}}:</label>
+                    <input placeholder="&#xf007; {{this.gFunc.label.signUp.username}}" style="font-family: Arial, FontAwesome" id="username" type="text" name="username" [(ngModel)]="this.signup.signin.username">
+                </div>
+                <div class="inp_row">
+                    <label for="name">{{this.gFunc.label.signUp.firstName}}:</label>
+                    <input placeholder="&#xf2c2; {{this.gFunc.label.signUp.firstName}}" style="font-family: Arial, FontAwesome" id="name" type="text" name="firstName" [(ngModel)]="this.signup.signin.name">
+                </div>
+                <div class="inp_row">
+                    <label for="surname">{{this.gFunc.label.signUp.lastName}}:</label>
+                    <input placeholder="&#xf2c2; {{this.gFunc.label.signUp.lastName}}" style="font-family: Arial, FontAwesome" id="surname" type="text" name="lastName" [(ngModel)]="this.signup.signin.surname">
+                </div>
+                <div class="inp_row">
+                    <label class="emailLabel" for="email">{{this.gFunc.label.signUp.email}}:</label>
+                    <input (keyup)="this.signup.checkEmail()" placeholder="&#xf0e0; {{this.gFunc.label.signUp.email}}" style="font-family: Arial, FontAwesome" id="email" type="text" name="email" [(ngModel)]="this.signup.signin.email">
+                </div>
+            </div>
+            <div class="right">
+                <div class="inp_row">
+                    <label for="password">{{this.gFunc.label.signUp.password}}:</label>
+                    <div class="passwordCont">
+                        <input (keyup)="this.signup.rPassCheck()" placeholder="&#xf084; {{this.gFunc.label.signUp.password}}" style="font-family: Arial, FontAwesome" id="password" type="password" name="password" [(ngModel)]="this.signup.signin.password"><i (click)="togglePasswordVisibility($event)" *ngIf="this.passWordIsVisible" class="eye fa-solid fa-eye-slash"></i><i *ngIf="!this.passWordIsVisible" (click)="togglePasswordVisibility($event)" class="eye fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                <div class="inp_row">
+                    <label for="rPassword">{{this.gFunc.label.signUp.confirmPassword}}:</label>
+                    <div class="passwordCont">
+                        <input (keyup)="this.signup.rPassCheck()" placeholder="&#xf084; {{this.gFunc.label.signUp.confirmPassword}}" style="font-family: Arial, FontAwesome" id="rPassword" type="password" name="rPassword" [(ngModel)]="this.signup.signin.confirm_password"><i (click)="togglePasswordVisibility($event)" *ngIf="this.rPassWordIsVisible" class="eye fa-solid fa-eye-slash"></i><i *ngIf="!this.rPassWordIsVisible" (click)="togglePasswordVisibility($event)" class="eye fa-solid fa-eye"></i>
+                    </div>
+                </div>          
+                <div class="inp_row">
+                    <label class="dateLabel" for="birthDate">{{this.gFunc.label.signUp.birthDate}}: </label>
+                    <input (change)="this.signup.checkDate()" style="font-family: Arial, FontAwesome" placeholder="Select a date" id="birthDate" type="date" name="birthOfDate" [(ngModel)]="this.signup.signin.date">
+                </div>
+                <div class="inp_row file_inp">
+                    <input style="font-family: Arial, FontAwesome" id="profilePict" type="file" name="image" (change)="this.signup.checkFile($event)">
+                    <label name="image" class="file" for="profilePict">{{this.gFunc.label.signUp.profilePicture}}&nbsp;&nbsp;<i style="font-size: 18px;" class="fa-solid fa-file"></i></label>
+                </div>
+            </div>
+        </div>
+        <div class="errorContainer" *ngIf="this.signup.errors[2]" style="transition: 1s;">
+            <ul>
+                <li *ngFor="let el of this.signup.error_text">{{el}}</li>
+            </ul>
+        </div>
+        <div class="row buttons">
+            <a [routerLink]="['']"><i class="fa-solid fa-house"></i> <span *ngIf="this.width > 800">&nbsp;{{this.gFunc.label.signUp.home}}</span></a>
+            <a [routerLink]="['/login']"><i class="fa-regular fa-user"></i><span *ngIf="this.width > 800">&nbsp;{{this.gFunc.label.signUp.signin}}</span></a>
+            <button type="submit" class="login"><span *ngIf="this.width > 800">{{this.gFunc.label.signUp.register}}</span>&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        </div>
+    </form>
+</div>

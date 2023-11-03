@@ -1,0 +1,19 @@
+<div class="home">
+    <app-loader  *ngIf="this.isLoading"></app-loader>
+    <div *ngIf="!this.isLoading">
+    </div>
+    <div class="viewSwitch">
+        <div class="switch">
+            <div (click)="swing($event)" class="knob">
+                
+            </div>
+        </div>
+        <h4 *ngIf="!this.isKnobRight">Registered Events</h4>
+        <h4 *ngIf="this.isKnobRight">Created Events</h4>
+    </div>
+    <div id="scrollableElement" class="cardContainer" *ngIf="!this.isLoading">
+        <app-event-card *ngFor="let el of this.parent_objs" [el]="el"></app-event-card>
+        <div class="filler" *ngIf="!needFiller(this.parent_objs.length) ? false : true" style="width: 50svw;height: 30svh;"></div>
+        <app-loader *ngIf="this.flag"></app-loader>
+    </div>
+</div>

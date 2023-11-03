@@ -1,0 +1,29 @@
+<div class="bigContainer">
+    <app-loader *ngIf="!this.isLoaded"></app-loader>
+    <div *ngIf="this.isLoaded" class="container">
+        <div class="createContainer">
+            <h1>{{this.inpLen > 1 ? this.gFunc.label.tagPage.createTags : this.gFunc.label.tagPage.createTag}}</h1>
+            <form class="createBox">
+                <div class="inputWrap">
+                    <input name="inp1" class="myInput inp1" placeholder="&nbsp;&#xf02b;" type="text">
+                    <i class="delete fa-solid fa-delete-left"></i>
+                </div>
+            </form>
+            <div class="buttonsContainer">
+                <i (click)="addTag()" class="add fa-solid fa-plus"></i>
+                <button (click)="submitNewTag()">{{this.inpLen > 1 ? this.gFunc.label.tagPage.addTags : this.gFunc.label.tagPage.addTag}}</button>
+            </div>
+        </div>
+        <div class="modRemContainer">
+            <h1>{{this.gFunc.label.tagPage.modifyOrDelete}}</h1>
+            <div class="modRemBox">
+                <form class="myForm form{{i}}"  *ngFor="let el of this.tags.categories; let i = index">
+                    <input readonly id="{{el}}" name="inp{{i}}" value="{{el}}" type="text">
+                    <i (click)="enableOrSubmit($event)" class="pencil fa-solid fa-pencil"></i>
+                    <i (click)="removeTag($event)" class="trash fa-solid fa-trash"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

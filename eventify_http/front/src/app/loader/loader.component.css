@@ -1,0 +1,74 @@
+.loader {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 17svw;
+    height: 30svw;
+  }
+  .loader div {
+    width: 2svw;
+    height: 3svw;
+    border: 2px solid black;
+    border-radius: 0.5svw;
+    animation: loaderAnimation 1.2s ease infinite;
+  }
+  .loader div:nth-child(5) {
+    background-color: var(--bg-col);
+    animation-delay: 0s;
+  }
+  .loader div:nth-child(4) {
+    background-color: var(--text-col);
+    animation-delay: -0.10s;
+  }
+  .loader div:nth-child(3) {
+    background-color: var(--ok-col);
+    animation-delay: -0.20s;
+  }
+  .loader div:nth-child(2) {
+    background-color: var(--det-col);
+    animation-delay: -0.30s;
+  }
+  .loader div:nth-child(1) {
+    background-color: var(--err-col);
+    animation-delay: -0.40s;
+  }
+  @keyframes loaderAnimation {
+    0% {
+      height: 5svw;
+    }
+    50% {
+      height: 10svw;
+    }
+    100% {
+        height: 5svw;
+    }
+}
+  @keyframes loaderAnimationSmall {
+    0% {
+      height: 10svw;
+    }
+    50% {
+      height: 20svw;
+    }
+    100% {
+        height: 10svw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .loader {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 40svw;
+        height: 28svw;
+      }
+      .loader div {
+        width: 4svw;
+        height: 10svw;
+        border: 2px solid black;
+        border-radius: 1svw;
+        animation: loaderAnimationSmall 1.2s ease infinite;
+      }
+    
+}

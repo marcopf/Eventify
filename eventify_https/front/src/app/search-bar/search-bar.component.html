@@ -1,0 +1,58 @@
+<div class="bigContainer" *ngIf="this.events.isSearchVisible">
+    <div [class.bottomEdge]="this.inp == 'categories' || !this.searchInput" class="container">
+        <!-- search category container -->
+        <select (change)="switchInput()" name="filter" id="filter">
+            <option value="title">{{this.gFunc.label.searchBar.title}}</option>
+            <option value="categories">{{this.gFunc.label.searchBar.categories}}</option>
+            <option value="place">{{this.gFunc.label.searchBar.place}}</option>
+            <option value="date">{{this.gFunc.label.searchBar.date}}</option>
+        </select>
+    <!-- searchbar and input section -->
+        <div class="searchContainer">
+            <form id="searchForm" action="">
+                <input *ngIf="this.inp != 'categories' && this.searchInput" class="searchBar" placeholder="{{this.gFunc.label.searchBar.search}}..." type="text" name="searchVal" [(ngModel)]="this.events.value">
+                <div (click)="addTag($event)" *ngIf="this.inp == 'categories' || !this.searchInput" class="categorySearchBar">
+                    <span class="not-pressedDiv pressed" *ngFor="let el of this.categories">{{el}}</span>
+                    <div *ngIf="!this.searchInput" class="dateContainer">
+                        <div class="from">
+                            <span class="dateC" *ngIf="this.dateSearch.startDate != ''"><span class="bold">{{this.gFunc.label.searchBar.from}}</span>&nbsp;{{this.dateSearch.startDate}}</span><span class="dateC" *ngIf="this.dateSearch.startTime!= ''"><span class="bold">&nbsp;{{this.gFunc.label.searchBar.to}}</span>&nbsp;{{this.dateSearch.startTime}}</span>
+                        </div>
+                        <div class="to">
+                            <span class="dateC" *ngIf="this.dateSearch.endDate != ''"><span class="bold">{{this.gFunc.label.searchBar.endFrom}}</span>&nbsp;{{this.dateSearch.endDate}}</span><span class="dateC" *ngIf="this.dateSearch.endTime != ''"><span class="bold">&nbsp;{{this.gFunc.label.searchBar.endTo}}</span>&nbsp;{{this.dateSearch.endTime}}</span>
+                        </div>
+                    </div>
+                </div>
+                <i (click)="search()" *ngIf="this.searchInput" class="fa-solid fa-magnifying-glass"></i>
+            </form>
+        </div>
+
+    </div>
+    <!-- element that contain the date picker -->
+    <div class="datePick" *ngIf="!this.searchInput">
+        <form id="dateForm" action="#" (ngSubmit)="searchByDate()">
+            <div class="start">
+                <h2>{{this.gFunc.label.searchBar.from}}</h2>
+                <input id="startDate" name="startDate" type="date" [(ngModel)]="this.dateSearch.startDate">
+                <h2>{{this.gFunc.label.searchBar.to}}</h2>
+                <input id="startTime" name="startTime" type="time" [(ngModel)]="this.dateSearch.startTime">
+            </div>
+            <div class="end">
+                <h2>{{this.gFunc.label.searchBar.endFrom}}</h2>
+                <input id="endDate" name="endDate" type="date" [(ngModel)]="this.dateSearch.endDate">
+                <h2>{{this.gFunc.label.searchBar.endTo}}</h2>
+                <input id="endTime" name="endTime" type="time" [(ngModel)]="this.dateSearch.endTime">
+            </div>
+            <button type="submit">{{this.gFunc.label.searchBar.dateSubmit}}</button>
+        </form>
+    </div>
+    <!-- categories selector element -->
+    <div *ngIf="this.inp == 'categories'" class="categorySearch">
+        <input placeholder="&#xf002;&nbsp;" id="tagSearch" type="text" (keyup)="searchFunc($event)">
+        <app-small-loader *ngIf="!this.isLoaded"></app-small-loader>
+        <div (click)="addTag($event)" *ngIf="this.isLoaded" class="tags">
+            <div *ngFor="let tag of this.tags.categories" class="tag">
+                <span [class.pressed]="isInList(tag)" [class.not-pressed]="!isInList(tag)" *ngIf="this.input == tag.substring(0, this.input.length)" >{{tag}}</span>
+            </div>
+        </div>
+    </div>
+</div>

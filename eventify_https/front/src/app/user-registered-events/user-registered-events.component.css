@@ -1,0 +1,92 @@
+.cardContainer {
+    height: 89svh;
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+    position: relative;
+}
+
+.viewSwitch {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 10svh;
+    width: 13svw;
+    background-color: var(--bg-col);
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0.9svw;
+    color: white;
+    border-radius: 6px;
+    z-index: 102;
+}
+
+.switch {
+    width: 35%;
+    height: 50%;
+    border-radius: 7px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: 0.4s;
+    margin: 0 20px 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.knob {
+    transform: translateX(-80%);
+    width: 35%;
+    height: 80%;
+    border-radius: 5px;
+    background-color: var(--det-col);
+    transition: 0.4s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+h4 {
+    width: 100%;
+    text-align: center;
+    height: 50%;
+    margin: 0;
+}
+
+.knob:hover {
+    cursor: pointer;
+}
+
+.home {
+    display: flex;
+    width: 100svw;
+    min-height: 89svh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/cardDisplay.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: small;
+    }
+    .viewSwitch {
+        width: 40svw;
+    }
+    .switch {
+        width: 70%;
+        padding: 1.5svw;
+    }
+    .knob {
+        height: 100%;
+    }
+}

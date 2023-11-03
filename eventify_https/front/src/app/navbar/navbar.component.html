@@ -1,0 +1,36 @@
+<div class="topBar">
+    <img class="logo" [routerLink]="['/']" *ngIf="(this.getWindow() <= 1000 && !this.userWantToSearch) || this.getWindow() > 1000" src="/assets/logo.png">
+    <i *ngIf="this.getWindow() <= 1000 && this.userWantToSearch" class="fa-solid fa-arrow-left same" (click)="this.userWantToSearch? this.userWantToSearch = false : this.userWantToSearch = true"></i>
+    <app-search-bar *ngIf="(this.getWindow() > 1000 && !this.event.isMyEvents) || this.userWantToSearch" ></app-search-bar>
+    <i *ngIf="this.getWindow() <= 1000 && !this.userWantToSearch && this.event.isSearchVisible" class="fa-solid fa-magnifying-glass" (click)="this.userWantToSearch? this.userWantToSearch = false : this.userWantToSearch = true"></i>
+    <div class="sidebar">
+        <div (click)="openSide()" class="menu"><i class="user fa-solid fa-bars"></i></div>
+    </div>
+    <div *ngIf="!(this.getWindow() <= 1000)"  class="sidebarBarPlaceholder">
+    </div>
+    <div class="side">
+        <h1 class="title menuItem"> <img *ngIf="isLogged()" [src]="imageUrl[0]" alt=""><i [routerLink]="['/notification']" class="fa-solid fa-bell"><div *ngIf="this.notification.isInboxFull" class="redCircle"></div></i>{{getUsername() != null ? getUsername() : "Menu"}}
+        <select (change)="this.gFunc.switchLanguage()"  name="language" id="lan">
+            <option value="en">🇬🇧</option>
+            <option value="ita">🇮🇹</option>
+            <option value="fr">🇫🇷</option>
+            <option value="es">🇪🇸</option>
+            <option value="de">🇩🇪</option>
+            <option value="el">🇬🇷</option>
+            <option value="ru">🇷🇺</option>
+        </select>
+        </h1>
+        <a *ngIf="!isLogged()" class="menuItem" [routerLink]="['/login']"><i class="fa-solid fa-right-to-bracket"></i>{{this.gFunc.label.sideBar.login}}</a>
+        <a *ngIf="!isLogged()" class="menuItem" [routerLink]="['/signin']"><i class="fa-solid fa-user-plus"></i>{{this.gFunc.label.sideBar.signUp}}</a>
+        <a class="menuItem" [routerLink]="['']"><i class="fa-solid fa-house"></i>{{this.gFunc.label.sideBar.home}}</a>
+        <a *ngIf="isLogged()" class="menuItem" [routerLink]="['/events']"><i class="fa-solid fa-calendar-days"></i>{{this.gFunc.label.sideBar.allEvents}}</a>
+        <a *ngIf="isLogged()" class="menuItem" [routerLink]="['/registered-events']"><i class="fa-solid fa-calendar-days"></i>{{this.gFunc.label.sideBar.registeredEvents}}</a>
+        <a *ngIf="isLogged()" class="menuItem" [routerLink]="['/userInfo']"><i class="fa-solid fa-user"></i>{{this.gFunc.label.sideBar.userInfo}}</a>
+        <a class="menuItem" *ngIf="isAdmin()" [routerLink]="['/users']"><i class="fa-solid fa-helmet-safety"></i>{{this.gFunc.label.sideBar.adminPanel}}</a>
+        <a *ngIf="isLogged()" class="menuItem" [routerLink]="['/create-event']"><i class="fa-solid fa-plus"></i>{{this.gFunc.label.sideBar.createEvent}}</a>
+        <a (click)="logout()" *ngIf="isLogged()" class="menuItem"><i class="fa-solid fa-right-from-bracket"></i><span>{{this.gFunc.label.sideBar.logout}}</span></a>
+    </div>
+    <div class="sideChat">
+    
+    </div>
+</div>

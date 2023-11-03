@@ -1,0 +1,724 @@
+.container {
+    width: 100svw;
+    height: 89svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    padding: 1svh;
+    /* background-color: #d8e2dc; */
+    background-image: url("/assets/cardDisplay.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.chatHandle {
+    position: absolute;
+    top: 4.5svh;
+    right: 0;
+    width: 5svw;
+    height: 30svh;
+    z-index: 10000;
+    background: linear-gradient(var(--text-col), var(--bg-col));
+    transition: 0.5s ease;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    border-radius: 10px 0 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60svw;
+    height: 89svh;
+    z-index: 10000;
+    transform: translateX(100%);
+    background: linear-gradient(var(--ok-col), var(--text-col));
+    transition: 0.5s ease;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.chatHandle h2 {
+    writing-mode: vertical-rl;
+    /* Vertical, right-to-left */
+    text-orientation: upright;
+    /* Keep text upright */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    margin: 0;
+    color: white;
+}
+
+.chatUsers {
+    width: 30%;
+    height: 95%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.chatTitle {
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-col);
+}
+
+.chatUsersList {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    overflow: scroll;
+}
+
+.chatUser {
+    width: 90%;
+    height: 10%;
+    box-sizing: border-box;
+    padding: 1svw;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 6px;
+    color: var(--bg-col);
+}
+
+.chatTitle h1 {
+    margin: 0;
+}
+
+.activeChat {
+    width: 60%;
+    height: 95%;
+    border-radius: 10px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 1svw;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.chatHistory {
+    width: 100%;
+    height: 77%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.chatBox {
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 1svw;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.chatBox textarea {
+    width: 80%;
+    height: 100%;
+    border: unset;
+    outline: unset;
+    border-radius: 10px;
+}
+
+.chatBox i {
+    background: linear-gradient(var(--ok-col), var(--text-col));
+    display: flex;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: x-large;
+    width: 15%;
+    height: 100%;
+}
+
+.load {
+    width: 100svw;
+    height: 89svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/assets/cardInfo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mainCard {
+    /* background-color: white; */
+    width: 65svw;
+    height: 80svh;
+    display: flex;
+    border-radius: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bg-col);
+    backdrop-filter: blur(50px);
+    border: 2px solid var(--bg-col);
+}
+
+.smallBlock {
+    margin-top: 6svh;
+}
+
+.limited {
+    height: 100%;
+    overflow: scroll;
+}
+
+.bottom-left-corner {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.bottom-left-corner h1 {
+    margin: 0;
+}
+
+.bot-left {
+    width: 59% !important;
+}
+
+.bot-right {
+    width: 39% !important;
+}
+
+.tags {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 25svh;
+    padding: 1svw;
+    overflow: scroll;
+    gap: 0.5svw;
+}
+
+.gMapsApi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.showMap {
+    color: white;
+    background-color: var(--err-col);
+    box-sizing: border-box;
+    padding: 1svw;
+    transition: 0.2s;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.showMap:hover {
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+.tag {
+    height: fit-content;
+    transition: 0.6s;
+}
+
+.not-pressed {
+    height: 6svh;
+    width: fit-content;
+    color: white;
+    display: flex;
+    padding: 1svw;
+    padding-left: 2svw;
+    padding-right: 2svw;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-col);
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+p {
+    max-height: 30svh;
+    overflow: scroll;
+    text-align: justify;
+    box-sizing: border-box;
+    padding: 1svw;
+}
+
+.element {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.elementVal {
+    color: var(--bg-col);
+    text-align: center;
+}
+
+.underline {
+    width: 100%;
+    text-decoration: unset;
+    color: white;
+    background-color: var(--bg-col);
+    border-radius: 5px;
+    font-size: 26px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+span {
+    color: var(--err-col);
+    text-decoration: none;
+}
+
+.maps {
+    background-image: url("/assets/mapBackground.png");
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 15px;
+    border: 2px solid var(--bg-col);
+    overflow: hidden;
+}
+
+.left {
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1svh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right {
+    width: 30%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1svh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.start {
+    width: 100%;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.options {
+    /* background-color: white; */
+    width: 30svw;
+    height: 80svh;
+    margin-left: 2svw;
+    height: 80svh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.buttons {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub,
+.unSub,
+.mod,
+.del {
+    width: fit-content;
+    min-width: 45%;
+    height: 7vh;
+    border-radius: 10px;
+    border: 2px solid var(--bg-col);
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-underline-position: none;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.unSub {
+    background-color: var(--err-col);
+    color: white;
+}
+
+.sub {
+    background-color: var(--ok-col);
+    color: white;
+}
+
+.mod {
+    background-color: var(--det-col);
+    color: white;
+}
+
+.mod:hover {
+    box-shadow: unset;
+}
+
+.sub:hover {
+    box-shadow: unset;
+}
+
+.unSub:hover {
+    box-shadow: unset;
+}
+
+.registeredUsers {
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--bg-col);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.4s;
+}
+
+.registeredUser h2 {
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+}
+
+.userCollection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+.imgContainer {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userCollection img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.user {
+    width: 100%;
+    height: 9svh;
+    background-color: white;
+    margin: 0.5svw;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid var(--bg-col);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    overflow: hidden;
+    transition: 0.7s;
+}
+
+.del {
+    background-color: var(--err-col);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.del:hover {
+    color: white;
+    cursor: pointer;
+    box-shadow: unset;
+}
+
+.toggleUserInfo {
+    display: flex;
+    flex-direction: column;
+    height: 20svh;
+    overflow-wrap: break-word;
+    /* Allow the text to break and wrap within the fixed width */
+    word-break: break-all;
+}
+
+.user h3 {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.sliderWrap {
+    width: 30svw;
+    height: 30svh;
+    border-radius: 15px;
+    overflow: hidden;
+    align-self: flex-start;
+    position: relative;
+    border: 2px solid var(--bg-col);
+    box-sizing: border-box;
+}
+
+.imageSlider {
+    width: 30svw;
+    height: 30svh;
+    display: flex;
+    background-color: aqua;
+    transition: 0.4s;
+}
+
+.controller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 30svw;
+    height: 30svh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.goNext {
+    width: 4svw;
+    height: 4svw;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--bg-col);
+    transition: 0.3s;
+}
+
+.goNext:hover {
+    transform: scale(1.25);
+    height: 24svh;
+    border-radius: 0;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    cursor: pointer;
+}
+
+.img {
+    width: 30svw;
+    height: 30svh;
+}
+
+.img img {
+    width: 30svw;
+    height: 30svh;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1000px) {
+    .tags {
+        height: fit-content;
+        margin: 20px 0 20px;
+    }
+    .tag {
+        margin: 10px 2px 10px 2px;
+    }
+    .not-pressed {
+        height: 6svh;
+        min-width: 20svw;
+        width: fit-content;
+        color: white;
+        display: flex;
+        padding: 1svw;
+        padding-left: 2svw;
+        padding-right: 2svw;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--text-col);
+        box-sizing: border-box;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+    .bottom-left-corner {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .bot-left,
+    .bot-right {
+        width: 100% !important;
+    }
+    .left {
+        width: 90svw;
+        height: fit-content;
+        box-sizing: border-box;
+        padding: 1svh;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .mainCard {
+        /* background-color: white; */
+        flex-direction: column;
+        width: 100svw;
+        height: fit-content;
+        display: flex;
+        border-radius: 20px;
+        box-sizing: border-box;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--bg-col);
+        backdrop-filter: blur(20px);
+        border: unset;
+    }
+    .container {
+        height: 89svh;
+        overflow: scroll;
+        flex-direction: column;
+        justify-content: start;
+        padding: 0;
+    }
+    p {
+        max-height: 30svh;
+    }
+    .sliderWrap {
+        margin-top: 4svw;
+        align-self: center;
+        width: 90svw;
+        height: 30svh;
+    }
+    .limited {
+        max-height: unset;
+        overflow: scroll;
+    }
+    .right {
+        width: 90svw;
+        height: fit-content;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 3svh;
+    }
+    .options {
+        width: 100svw;
+        height: fit-content;
+        border: unset;
+        margin-left: 0;
+        backdrop-filter: blur(20px);
+    }
+    .maps {
+        margin-top: 4svw;
+        width: 90svw;
+        height: 70svh;
+    }
+    .iframe {
+        width: 90svw;
+        height: 70svh;
+    }
+    .img {
+        width: 100svw;
+        height: 30svh;
+    }
+    .img img {
+        width: 100svw;
+        height: 30svh;
+        object-fit: cover;
+    }
+    .controller {
+        width: 100svw;
+        height: 30svh;
+    }
+    .goNext {
+        width: 10svw;
+        height: 10svw;
+    }
+    .imageSlider {
+        width: 90svw;
+        height: 30svh;
+    }
+    .registeredUsers {
+        width: 90svw;
+        height: fit-content;
+    }
+    .userCollection {
+        margin-top: 20px;
+        height: unset;
+        height: 40svh;
+    }
+    .user {
+        width: 90svw;
+        margin-top: 2svh;
+    }
+    .buttons {
+        width: 90svw;
+        height: 20svh;
+        align-items: center;
+    }
+    .start {
+        align-self: center;
+    }
+}

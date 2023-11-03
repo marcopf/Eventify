@@ -1,0 +1,52 @@
+<div [ngStyle]="{width: this.small ? '40svw' : '30svw'}" class="card cardN{{el.id? el.id : ''}}">
+    <div class="info">
+        <div class="image">
+            <img [src]="imageUrl[0]"  alt="">
+        </div>
+        <div class="tit">
+            <h2>{{el!.title}}</h2>
+        </div>
+        <div class="infoContainer">
+            <div class="infoEl">
+                <span class="highlight">
+                    <i class="fa-solid fa-tag"></i>
+                    &nbsp;{{this.gFunc.label.card.categories}}<br>
+                </span>
+                <p>
+                    <span *ngFor="let el of el!.categories; let i = index" [class.invisible]="i >= 5">{{el}}</span>
+                </p>
+            </div>
+            <div class="infoEl">
+                <div class="infoSmallBlock">
+                    <span class="highlight">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        &nbsp;{{this.gFunc.label.card.date}}<br>
+                    </span>
+                    <span>
+                        {{el.eventDate.split("T")[0]}}
+                    </span>
+                </div>
+                <div class="infoSmallBlock">
+                    <span class="highlight">
+                        <i class="fa-solid fa-clock"></i>
+                        &nbsp;{{this.gFunc.label.card.time}}<br>
+                    </span>
+                    <span>
+                        {{el.eventDate.split("T")[1]}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fullCard">
+        <h1>{{this.gFunc.label.card.description}}</h1>
+        <div class="description">
+            <p>
+                {{el.description}}
+            </p>
+        </div>
+           <button class="del" *ngIf="this.gFunc.isAdmin() && this.small" (click)="api.deleteEvent(el.id, el.title)"><i class="deleteEventIcon fa-solid fa-trash-can"></i></button>
+        <button (click)="getFullInfo(el.id ? el.id : '')">{{this.gFunc.label.card.fullInfo}}&nbsp;<i class="fa-solid fa-circle-info"></i></button>
+    </div>
+</div>
+

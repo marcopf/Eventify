@@ -1,0 +1,324 @@
+.topBar
+{
+    position: relative;
+    top: 0;
+    z-index: 100000;
+    height: 11svh;
+    width: 100svw;
+    background: linear-gradient(to right, var(--textToOk-col), var(--text-col), var(--bg-col));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.sidebarPlaceholder
+{
+    width: 7svw;
+}
+
+.language
+{
+    font-size: x-large;
+    border-radius: 10px;
+    transition: 0.5s;
+    padding: 0 1svw 0 1svw;
+}
+
+.fa-bell
+{
+    position: relative;
+}
+
+.redCircle
+{
+    width: 30%;
+    height: 30%;
+    background-color: red;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    border-radius: 50%;
+}
+
+.side
+{
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    right: -30svw;
+    z-index: 1010;
+    width: 30svw;
+    height: 100svh;box-sizing: border-box;
+
+    padding: 1svw;
+    background: linear-gradient(var(--bg-col), var(--text-col), var(--ok-col));
+    transition: transform 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+i:not(.fa-magnifying-glass)
+{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5svw;
+    margin: 0.5svw;
+    border-radius: 5px;
+}
+
+img
+{
+    width: 12svw;
+    height: 11svh;
+    background-color: var(--logo-col);
+    border-radius: 0 15px 15px 0;
+    object-fit: cover;
+}
+
+.logo
+{
+    object-fit: contain !important;
+}
+
+.sidebar
+{
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 7svw;
+    height: 11svh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    background: linear-gradient(to right, var(--det-col), var(--err-col));
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar:hover
+{
+    width: 10svw;
+    cursor: pointer;
+}
+
+.user
+{
+    color: var(--text-col);
+    font-size: 1.5em;
+}
+
+.menu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.menu i
+{
+    font-size: xx-large;
+    color: white;
+}
+.chat
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48%;
+    transition: 0.3s;
+}
+
+.sideChat
+{
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    right: -30svw;
+    z-index: 101;
+    width: 30svw;
+    height: 100svh;
+    background-color: var(--bg-col);
+    transition: transform 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+/* .sidebar:hover
+{
+    width: 9svw;
+    cursor: pointer;
+} */
+
+.title img
+{
+    width: 9svh;
+    height: 9svh;
+    border-radius: 50%;
+    margin: 5px 5px 5px;
+    border: 4px solid var(--det-col);
+}
+.title
+{
+    width: 90% !important;
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.title select
+{
+    font-size: xx-large;
+    border-radius: 10px;
+    margin-left: auto;
+}
+
+
+a
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    font-weight: 800;
+    color: white;
+    transition: 0.3s;
+    display: flex;
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+h1:not(.title)
+{
+    font-family: 'Lilita One', cursive;
+    color: var(--bg-col);
+    background-color: white;
+    padding: 0.5svw;
+    border-radius: 10px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.userLog
+{
+    display: flex;
+    width: 95%;
+}
+
+.menuItem
+{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;    transition: 0.5s;
+}
+
+a:hover
+{
+    background-color: white;
+    color: var(--det-col);
+}
+
+@media screen and (max-width: 1000px) {
+    img
+{
+    height: 11svh;
+    width: 40%;
+}
+    i:not(.fa-magnifying-glass, .same)
+    {
+        padding: 1svw;
+        margin: 1.5svh;
+    }
+    .topBar
+    {
+        box-sizing: border-box;
+        padding-right: 10px;
+        justify-content: space-between;
+        background: linear-gradient(var(--text-col), var(--bg-col));
+    }
+    .sidebar{
+        position: absolute;
+        border-radius: 0;
+        border-top-right-radius: 15px;
+        justify-content: start;
+        top: 90svh;
+        width: 20svw;
+        left: 0;
+        margin: 0;
+    }
+    .sidebar:hover
+    {
+        width: 25svw;
+    }
+    .side
+    {
+        width: 100svw;
+        height: 90svh;
+        top: 100svh;
+        left: 0;
+        box-sizing: border-box;
+        padding: 2svw;
+        border-radius: unset;
+    }
+    .menu
+    {
+        width: 20svw;
+    }
+    .menuItem
+    {
+        width: 80%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 2svw;
+        padding-right: 2svw;
+        padding-bottom: 0svw;
+        padding-top: 0svw;
+        border-radius: 10px;
+    }
+    h1:not(.title)
+    {
+        width: fit-content;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 2svw;
+        font-size: xx-large;
+    }
+    .fa-magnifying-glass, .same
+    {
+        width: 6svh;
+        height: 6svh;
+        font-size: xx-large;
+        background: linear-gradient(to right, var(--det-col), var(--err-col));
+        color: white;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;        border-radius: 1svh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="options">
+        <h2>{{this.gFunc.label.notification.eventsNotification}}</h2>
+        <div (click)="this.api.getNotification('true')" class="deleteNotification">
+            <i class="fa-solid fa-trash"></i>{{this.gFunc.label.notification.deleteNotification}}
+        </div>
+        <div class="optionBody">
+            <div *ngFor="let notification of this.notification.notification" class="notificationCard">
+                <div class="notificationIcon"><i class="fa-solid fa-envelope"></i><span *ngIf="notification.eventId != -1" [routerLink]="['/cardView/' + notification.eventId]">{{this.gFunc.label.notification.clickMe}}</span></div>
+                <span class="notificationBody">
+                    {{notification.message}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="notificationContainer">
+        <h2>{{this.gFunc.label.notification.imminentNotification}}</h2>
+        <div class="notificationBody">
+            <app-event-card *ngFor="let el of this.notification.imminentEvent" [el]="el"></app-event-card>
+        </div>
+    </div>
+</div>

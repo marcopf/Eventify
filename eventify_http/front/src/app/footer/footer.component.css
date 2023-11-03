@@ -1,0 +1,6 @@
+.container
+{
+    width: 100svw;
+    height: 20svh;
+    background-color: var(--bg-col);
+}

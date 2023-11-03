@@ -1,0 +1,321 @@
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(0deg) translateX(0);
+    }
+    75%{
+        transform: rotate(-10deg);
+    }
+    100%
+    {
+        transform: rotate(0deg) translateX(0);
+    }
+}
+
+.shake
+{
+    animation: shake 0.3s linear;
+}
+
+.container
+{
+    width: 100svw;
+    height: 89svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-col);
+    background-image: url("/assets/home.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.inp_row
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1
+{
+    color: transparent;
+    width: 95%;
+    background: linear-gradient(var(--ok-col), var(--text-col), var(--bg-col));
+    background-clip: text;
+    margin: 0;
+}
+
+form{
+    /* background: linear-gradient(to left, var(--err-col), var(--det-col)); */
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: fit-content;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+i
+{
+    font-family: FontAwesome !important;
+    transition: 0.2s;
+}
+
+.inp_row, .row
+{
+    width: 95%;
+    height: 10vh;
+}
+
+.file_inp
+{
+    display: flex;
+    margin-left: 5px;
+}
+
+svg{
+    color: var(--text-col);
+}
+
+form label
+{
+    font-weight: 500;
+    color: var(--text-col);
+}
+
+::placeholder
+{
+    color: var(--bg-col);
+}
+
+#birthDate
+{
+    color: var(--bg-col);
+    opacity: 0.9;
+}
+
+#profilePict
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.file
+{
+    height: 5vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+input:not(#password, #rPassword)
+{
+    width: 95%;
+    height: 4vh;
+    border: unset;
+    font-size: 20px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    transition: 0.5s;
+    color: var(--bg-col);
+    border-bottom: 2px solid var(--bg-col);
+}
+
+#password, #rPassword
+{
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    height: 4svh;
+    font-size: 20px;
+    outline: none;
+    padding-left: 10px;
+    width: 80%;
+}
+
+.eye
+{
+    width: 4svh;
+    height: 4svh;
+    background-color: var(--det-col);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.passwordCont
+{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    border: unset;
+    height: 4.4svh;
+    align-items: center;
+    padding-right: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+    border-bottom: 2px solid var(--bg-col);
+}
+
+.main
+{
+    display: flex;
+    width: 95%;
+}
+
+.left
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+button
+{
+    width: 30%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--ok-col);
+    border: unset;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-underline-position: none;
+    cursor: pointer;
+    color: white;
+    transition: 0.5s;
+}
+
+button:hover
+{
+    background-color: var(--det-col);
+}
+
+a
+{
+    width: 30%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--det-col);
+}
+
+a:hover
+{
+    color: var(--err-col);
+}
+
+ul
+{
+    padding: 0;
+    color: var(--darkErr-col);
+}
+
+li
+{
+    list-style: none;
+    font-size: 15px;
+}
+
+.row
+{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    height: 9svh;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: white; */
+    background: linear-gradient(to right, var(--text-col), var(--bg-col));
+    border-radius: 15px;
+}
+
+.errorContainer
+{
+    width: 94%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+    .container
+    {
+        width: 100svw;
+        height: 89svh;
+        align-items: flex-start;
+        overflow: scroll;
+    }
+
+    .main
+    {
+        flex-direction: column;
+    }
+
+    .left, .right
+    {
+        width: 100%;
+    }
+
+    .login:hover i
+    {
+        transform: none;
+    }
+
+    form{
+        margin: 30px 0 30px;
+        padding: 20px;
+        width: 80vw;
+        height: fit-content;
+    }
+
+    .inp_row, .row
+    {
+        width: 100%;
+        height: 8svh;
+        margin: 10px 0 10px;
+    }
+
+    #birthDate
+    {
+        width: 95%;
+    }
+
+    li
+    {
+        font-size: 0.6em;
+    }
+}

@@ -1,0 +1,11 @@
+<div class="home eventsView">
+    <app-loader *ngIf="this.isLoading"></app-loader>
+    <div *ngIf="!this.isLoading">
+        {{setListenerForInfiniteScroll()}}
+    </div>
+    <div id="scrollableElement" class="cardContainer" *ngIf="!this.isLoading">
+        <app-event-card *ngFor="let el of this.events.events" [el]="el"></app-event-card>
+        <div class="filler" *ngIf="!needFiller(parent_objs.length) ? false : true" style="width: 50svw;height: 30svh;"></div>
+        <app-loader *ngIf="this.infiniteScrollLoader"></app-loader>
+    </div>
+</div>
